@@ -1,0 +1,202 @@
+/* Christmas Lights Styles */
+
+ul {
+    position: 0;
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 0;
+    border-top: 2px solid #777;
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+    position: relative;
+    top: -20px;
+    width: 24px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 25px;
+}
+
+ul li:before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 7px;
+    width: 10px;
+    height: 8px;
+    background: #444;
+}
+
+ul li:after {
+    content: '';
+    position: absolute;
+    top: -24px;
+    left: 12px;
+    width: 74px;
+    height: 26px;
+    border-bottom: 2px solid #444;
+    border-radius: 50%;
+}
+
+ul li:last-child:after {
+    border-bottom: none;
+}
+
+.light {
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 25px rgba(255, 255, 0, 0), 0 0 45px rgba(255, 255, 0, 0);
+    transition: background 0.5s, box-shadow 0.5s;
+}
+
+.light.animate1 {
+    background: rgba(255, 255, 0, 0.2);
+    box-shadow: 0 0 25px rgba(255, 255, 0, 1), 0 0 45px rgba(255, 255, 0, 1);
+    animation: animate1 1.5s linear infinite;
+}
+
+.light.animate2 {
+    background: rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 25px rgba(255, 0, 255, 1), 0 0 45px rgba(255, 0, 255, 1);
+    animation: animate2 1.5s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.light.animate3 {
+    background: rgba(50, 255, 0, 0.2);
+    box-shadow: 0 0 25px rgba(50, 255, 0, 1), 0 0 45px rgba(50, 255, 0.5, 1);
+    animation: animate3 1.5s linear infinite;
+    animation-delay: 0.75s;
+}
+
+@keyframes animate1 {
+    0%, 100% {
+        background: rgba(255, 255, 0, 0.2);
+        box-shadow: 0 0 25px rgba(255, 255, 0, 1), 0 0 45px rgba(255, 255, 0, 1);
+    }
+    50% {
+        background: rgba(255, 255, 0, 1);
+        box-shadow: none;
+    }
+}
+
+@keyframes animate2 {
+    0%, 100% {
+        background: rgba(255, 0, 255, 0.2);
+        box-shadow: 0 0 25px rgba(255, 0, 255, 1), 0 0 45px rgba(255, 0, 255, 1);
+    }
+    50% {
+        background: rgba(255, 0, 255, 1);
+        box-shadow: none;
+    }
+}
+
+@keyframes animate3 {
+    0%, 100% {
+        background: rgba(50, 255, 0, 0.2);
+        box-shadow: 0 0 25px rgba(50, 255, 0, 1), 0 0 45px rgba(50, 255, 0.5, 1);
+    }
+    50% {
+        background: rgba(50, 255, 0, 1);
+        box-shadow: none;
+    }
+}
+
+.controls {
+    text-align: center;
+}
+
+/* Global Styles */
+
+body{
+    margin: 0;
+    padding: 0;
+    background: black;
+    overflow: hidden;
+}
+
+.container{
+    position: relative;
+}
+
+/* Snow Styles */
+
+.snow, .snow2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./snow.png);
+    background-position: 0 0;
+}
+
+.snow{
+    background-size: 70em;
+    animation: snowfall 20s linear infinite;
+}
+
+.snow2{
+    background-size: 50em;
+    animation: snowfall2 23s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes snowfall{
+    100% {
+        background-position: 70em 70em;
+    }
+}
+
+@keyframes snowfall2{
+    100% {
+        background-position: 50em 0;
+    }
+}
+
+/* Buttons */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #222;
+    color: #fff;
+    text-align: center;
+}
+
+.controls {
+    margin-top: 250px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+input {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    margin-right: 10px;
+}
